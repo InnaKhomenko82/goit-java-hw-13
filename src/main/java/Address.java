@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-class Address {
+public class Address {
     @SerializedName("street")
     private String street;
 

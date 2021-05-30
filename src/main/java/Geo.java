@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-class Geo {
+public class Geo {
     @SerializedName("lat")
     private Float latitude;
 

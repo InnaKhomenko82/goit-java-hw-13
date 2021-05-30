@@ -20,18 +20,18 @@ public class Main {
 
         System.out.println("~ ~ ~ ~ ~ ~ ~");
         System.out.println("Добавляем новый объект:\n" + newUser());
-        
+        RetrofitConfig.execute(client.addObject(newUser()));
         //listUsers.add(newUser());
         System.out.println("++++");
         //RetrofitConfig.execute(client.addObject(newUser()));
-        System.out.println(listUsers);
+        //System.out.println(listUsers);
         for (User user : listUsers) System.out.println(user.getId() + " "+ user.getName());
 
         System.out.println("~ ~ ~ ~ ~ ~ ~");
-        System.out.println(RetrofitConfig.execute(client.updateUser(newUser(), 2)));
+        //System.out.println(RetrofitConfig.execute(client.updateUser(newUser(), 2)));
 
         System.out.println("~ ~ ~ ~ ~ ~ ~");
-        System.out.println(RetrofitConfig.execute(client.deleteUser(8)));
+        //System.out.println(RetrofitConfig.execute(client.deleteUser(8)));
     }
 
 

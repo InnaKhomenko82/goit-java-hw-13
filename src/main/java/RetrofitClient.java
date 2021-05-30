@@ -1,4 +1,3 @@
-import com.google.gson.Gson;
 import retrofit2.Call;
 import retrofit2.http.*;
 import java.util.List;
@@ -10,7 +9,7 @@ public interface RetrofitClient {
 
     @PUT("users/{id}")
     @Headers({"ContentType-Type: application/json"})
-    Call<User> updateUser(@Body User user, @Path("id") int id);
+    Call<User> updateUser(@Body User user, @Path("id") Integer id);
 
     @GET("users")
     @Headers({"ContentType-Type: application/json"})
@@ -18,5 +17,13 @@ public interface RetrofitClient {
 
     @DELETE("users/{id}")
     @Headers({"ContentType-Type: application/json"})
-    Call<User> deleteUser(@Path("id") int id);
+    Call<User> deleteUser(@Path("id") Integer id);
+
+    @GET("users/{userID}/posts")
+    @Headers({"ContentType-Type: application/json"})
+    Call <List<Post>> getUserPosts(@Path("userID") Integer userID);
+
+    @GET("posts/{postID}/comments")
+    @Headers({"ContentType-Type: application/json"})
+    Call <List<Comment>> getComments(@Path("postID") Integer userID);
 }

@@ -6,11 +6,11 @@ import java.util.List;
 public interface RetrofitClient {
     @POST("users")
     @Headers({"ContentType-Type: application/json"})
-    Call<List<User>> addObject (@Body User user);
+    Call<User> addObject (@Body User user);
 
     @PUT("users/{id}")
     @Headers({"ContentType-Type: application/json"})
-    Call<List<User>> updateUser(@Body User user, @Path("id") int id);
+    Call<User> updateUser(@Body User user, @Path("id") int id);
 
     @GET("users")
     @Headers({"ContentType-Type: application/json"})
@@ -18,5 +18,5 @@ public interface RetrofitClient {
 
     @DELETE("users/{id}")
     @Headers({"ContentType-Type: application/json"})
-    Call<List<User>> deleteUser(@Path("id") int id);
+    Call<User> deleteUser(@Path("id") int id);
 }

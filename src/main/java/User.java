@@ -1,9 +1,13 @@
 import com.google.gson.annotations.SerializedName;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @SerializedName("id")
     private int id;
@@ -28,48 +32,6 @@ public class User {
 
     @SerializedName("company")
     private Company company;
-}
-
-@Builder
-@Data
-class Address {
-    @SerializedName("street")
-    private String street;
-
-    @SerializedName("suite")
-    private String suite;
-
-    @SerializedName("city")
-    private String city;
-
-    @SerializedName("zipcode")
-    private String zipcode;
-
-    @SerializedName("geo")
-    private Geo geo;
-}
-
-@Builder
-@Data
-class Geo {
-    @SerializedName("lat")
-    private double latitude;
-
-    @SerializedName("lgn")
-    private double longitude;
-}
-
-@Builder
-@Data
-class Company {
-    @SerializedName("name")
-    private String nameCompany;
-
-    @SerializedName("catchPhrase")
-    private String catchPhrase;
-
-    @SerializedName("bs")
-    private String bs;
 }
 
 /*

@@ -19,11 +19,7 @@ public class RetrofitConfig {
     public static <T> T execute (Call <T> call){
         Response<T> response = call.execute();
         if (response.isSuccessful()) return response.body();
-        else {
-            String errorMessage = "HTTP code: " + response.code() + " -> " + response.errorBody().string();
-            System.out.println(errorMessage);
-            throw new RuntimeException(errorMessage);
-        }
+        else throw new RuntimeException("HTTP code: " + response.code()
+                + " -> " + response.errorBody().string());
     }
-
 }

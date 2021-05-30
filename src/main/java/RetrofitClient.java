@@ -19,6 +19,14 @@ public interface RetrofitClient {
     @Headers({"ContentType-Type: application/json"})
     Call<User> deleteUser(@Path("id") Integer id);
 
+    @GET("users")
+    @Headers({"Content-Type: application/json"})
+    Call<List<User>> getUserByID(@Query("id") Integer id);
+
+    @GET("users")
+    @Headers({"Content-Type: application/json"})
+    Call<List<User>> getUserByUserName(@Query("username") String userName);
+
     @GET("users/{userID}/posts")
     @Headers({"ContentType-Type: application/json"})
     Call <List<Post>> getUserPosts(@Path("userID") Integer userID);
@@ -26,4 +34,9 @@ public interface RetrofitClient {
     @GET("posts/{postID}/comments")
     @Headers({"ContentType-Type: application/json"})
     Call <List<Comment>> getComments(@Path("postID") Integer userID);
+
+    @GET("users/{userID}/todos")
+    @Headers({"ContentType-Type: application/json"})
+    Call<List<ToDo>> getTodo(@Path("userID") String userID,
+                             @Query("completed") boolean completed);
 }
